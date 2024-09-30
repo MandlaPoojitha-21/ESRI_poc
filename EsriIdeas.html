@@ -1,0 +1,32 @@
+<div class="roles">
+
+    <h1 class="idea-reviewer-text" style="display: none;">You are an Idea Reviewer</h1>
+</div>
+
+<script>
+    // Fetch the data.json file
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            const roles = data.data.self.roles.edges;
+            const rolesList = document.getElementById('rolesList');
+            const ideaReviewerText = document.querySelector('.idea-reviewer-text');
+
+            // Boolean flag to check if IdeaReviewer is found
+            let isIdeaReviewer = false;
+
+            // Loop through the roles and append them to the rolesList as list items
+            roles.forEach(role => {
+
+                // Check if the role is IdeaReviewer
+                if (role.node.name === 'IdeaReviewer') {
+                    isIdeaReviewer = true;
+                }
+            });
+            // If IdeaReviewer role is present, show the text
+            if (isIdeaReviewer) {
+                ideaReviewerText.style.display = 'block';
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>

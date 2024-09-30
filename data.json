@@ -1,0 +1,28 @@
+{
+    "data": {
+        "self": {
+            "roles": {
+                "edges": [
+                    {
+                        "node": {
+                            "id": "role:t:Administrator:core",
+                            "name": "Administrator"
+                        }
+                    },
+                    {
+                        "node": {
+                            "id": "role:t:IdeaReviewer:core",
+                            "name": "IdeaReviewer"
+                        }
+                    },
+                    {
+                        "node": {
+                            "id": "role:t:Expert:core",
+                            "name": "Expert"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
