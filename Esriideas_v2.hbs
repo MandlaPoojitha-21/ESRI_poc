@@ -1,0 +1,20 @@
+{{#gql "SelfRole"}}
+    {{#with data.data.self.roles.edges as |a|}}
+        {{#each a}}
+        <li class="slide">
+            {{#with node as |b|}}
+                {{#if (eq b.node.name "ideaReviewer")}}
+                    <div class="ideaReviewerText">
+                        <a style="color: #007ac2; background-color: #fff; border: 1px solid #007AC2; border-radius: 0; font-size: 16px; line-height: 20px; padding: 9.5px 15px; font-weight: 300; display: block; width: 100%;" href="/category/internal-ideas">
+                            ArcGIS Internal Ideas
+                            <img style="width: 30px; float: right; margin-top: -8px;" src="https://communitystg.esri.com/html/assets/ArcGIS-Internal-Ideas.png">
+                        </a>
+                    </div>
+                {{/if}}
+                <p>{{b.node.name}}</p>
+                <p>{{b.node.id}}</p>
+            {{/with}}   
+        </li> 
+        {{/each}}
+    {{/with}}
+{{/gql}}
