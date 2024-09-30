@@ -1,0 +1,54 @@
+<div class="roles">
+
+    <h1 class="idea-reviewer-text" style="display: none;">You are an Idea Reviewer</h1>
+</div>
+
+<script>
+    const graphqlEndpoint = "https://ztycn97642.stage.lithium.com/t5/s/api/2.1/graphql";
+    const query = `
+      query BoardsQuery {
+        boards {
+          edges {
+            node {
+              id
+              title
+              views
+              messagesCount
+              conversationStyle
+            }
+          }
+        }
+      }
+    `;
+    fetch(graphqlEndpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    })
+      .then(response => response.json())
+      .then(data => {
+            const roles = data.data.self.roles.edges;
+            const ideaReviewerText = document.querySelector('.idea-reviewer-text');
+
+            // Boolean flag to check if IdeaReviewer is found
+            let isIdeaReviewer = false;
+
+            // Loop through the roles and append them to the rolesList as list items
+            roles.forEach(role => {
+
+                // Check if the role is IdeaReviewer
+                if (role.node.name === 'IdeaReviewer') {
+                    isIdeaReviewer = true;
+                }
+            });
+            // If IdeaReviewer role is present, show the text
+            if (isIdeaReviewer) {
+                ideaReviewerText.style.display = 'block';
+            }
+        }).catch(error => console.error('Error fetching data:', error));
+
+
+   
+</script>
