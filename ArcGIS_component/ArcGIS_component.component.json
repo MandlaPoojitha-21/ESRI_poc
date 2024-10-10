@@ -1,0 +1,18 @@
+{
+    "id": "ArcGIS_component",
+    "markupLanguage": "REACT",
+    "defaults": {
+      "config": {
+        "applicablePages": [],
+        "description": "This is test component which call the graphql and shown results."
+      },
+      "props": []
+    },
+    "components": [
+      {
+        "id": "custom.widget.ArcGIS_component"
+      }
+    ],
+    "grouping": "CUSTOM"
+  }
+  

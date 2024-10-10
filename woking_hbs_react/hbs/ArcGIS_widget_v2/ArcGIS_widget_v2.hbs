@@ -1,0 +1,26 @@
+{{#gql "SelfRoles"}}
+    {{#with data.self.roles.edges as |edges|}}
+    
+        {{#each edges as |edge|}}
+        
+            {{#with edge.node as |role|}}
+                <p>{{role.name}}</p>
+                {{!-- Show the div if role.name is either "Administrator" or "Esri" --}}
+                {{#if (or (eq role.name "Administrator") (eq role.name "Esri"))}}
+                    {{assign "helperVar" "<th>Head 2 (optional)</th>"}}
+
+                    <div>
+                        <a style="color: #007ac2; background-color: #fff; border: 1px solid #007AC2; border-radius: 0; font-size: 16px; line-height: 20px; padding: 9.5px 15px; font-weight: 300; display: block; width: 100%;" href="/category/internal-ideas">
+                            ArcGIS Internal Ideassss
+                            <img style="width: 30px; float: right; margin-top: -8px;" src="https://communitystg.esri.com/html/assets/ArcGIS-Internal-Ideas.png">
+                        </a>
+                    </div>
+                {{/if}}
+            {{/with}}
+        
+        {{/each}}
+    
+    {{/with}}
+{{/gql}}
+
+{{helperVar}}

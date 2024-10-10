@@ -1,0 +1,20 @@
+{
+    "id": "ArcGIS_widget_v2",
+    "markupLanguage": "HANDLEBARS",
+    "defaults": {
+      "config": {
+        "applicablePages": [],
+        "dynamicByCoreNode": false,
+        "description": "Custom header widget which is displayed based on role",
+        "fetchedContent" : null
+      },
+      "props": []
+    },
+    "components": [
+      {
+        "id": "custom.widget.ArcGIS_widget_v2"
+      }
+    ],
+    "grouping": "CUSTOM",
+    "aboutThis": null
+  }
