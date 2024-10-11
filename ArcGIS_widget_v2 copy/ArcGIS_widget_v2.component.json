@@ -1,0 +1,17 @@
+{
+  "id": "ArcGIS_widget_v2",
+  "markupLanguage": "REACT",
+  "defaults": {
+    "config": {
+      "applicablePages": [],
+      "description": "This component is displayed to users with sepcific roles"
+    },
+    "props": []
+  },
+  "components": [
+    {
+      "id": "custom.widget.ArcGIS_widget_v2"
+    }
+  ],
+  "grouping": "CUSTOM"
+}

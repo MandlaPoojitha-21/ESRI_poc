@@ -1,0 +1,12 @@
+query SelfRoles {
+  self {
+    roles {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+}
